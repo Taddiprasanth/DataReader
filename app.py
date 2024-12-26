@@ -59,7 +59,7 @@ def stop_services():
             # Delete Kafka topics
             topic_list = ['market_data']
             kafka_admin_client.delete_topics(topics=topic_list)
-            print("Kafka topics deleted")  # Debug
+            print("Kafka topics` deleted")  # Debug
         except Exception as kafka_error:
             print(f"Error deleting Kafka topics: {kafka_error}")  # Debug
 
