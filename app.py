@@ -40,8 +40,8 @@ def start_services():
 def stop_services():
     try:
         print("Stopping services...")
-        subprocess.call(['taskkill', '/IM', 'python.exe', '/F'])
         return "Microservices stopped and cache cleared successfully!"
+        subprocess.call(['taskkill', '/IM', 'python.exe', '/F'])
     except Exception as e:
         print(f"Error stopping services: {e}")  # Debug
         return jsonify({"error": str(e)}), 500
