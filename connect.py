@@ -1,16 +1,14 @@
+import redis
 from kafka import KafkaConsumer, KafkaProducer
 from redis import StrictRedis
 import json
 
 # Connect to Redis
-redis_client = StrictRedis(
-    host='redis-18698.c280.us-central1-2.gce.redns.redis-cloud.com',
-    port=18698,
-    username="default",
-    password="BKYiUHXCZv5rL1hI78j5Ph92kog2ZU6g",
+redis_client = redis.StrictRedis(
+    host='redis.finvedic.in',
+    port=6379,
     db=0
 )
-
 # Set up Kafka Producer and Consumer
 kafka_producer = KafkaProducer(bootstrap_servers='localhost:9092')
 kafka_consumer = KafkaConsumer(
