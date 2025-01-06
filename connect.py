@@ -9,10 +9,12 @@ redis_client = redis.StrictRedis(
     port=6379,
     db=0
 )
+
+
 # Set up Kafka Producer and Consumer
 kafka_producer = KafkaProducer(bootstrap_servers='localhost:9092')
 kafka_consumer = KafkaConsumer(
-    'market_data',
+    'track_orders',
     bootstrap_servers='localhost:9092',
     auto_offset_reset='earliest',
     value_deserializer=lambda x: json.loads(x.decode('utf-8'))
